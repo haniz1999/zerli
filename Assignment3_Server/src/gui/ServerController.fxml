@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="706.0" prefWidth="854.0" style="-fx-background-color: #978f8f;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ServerController">
+   <children>
+      <ImageView fitHeight="713.0" fitWidth="854.0" layoutY="-2.0" opacity="0.84" pickOnBounds="true">
+         <image>
+            <Image url="@../images/Serversbackground.jpg" />
+         </image></ImageView>
+      <AnchorPane layoutX="26.0" layoutY="99.0" prefHeight="562.0" prefWidth="456.0">
+         <children>
+            <Label layoutX="-6.0" layoutY="51.0" text="IP:" textFill="#24f409">
+               <font>
+                  <Font name="Algerian" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="-4.0" layoutY="116.0" text="Port:" textFill="#24f409">
+               <font>
+                  <Font name="Algerian" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="-4.0" layoutY="177.0" text="DB name:" textFill="#24f409">
+               <font>
+                  <Font name="Algerian" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="-6.0" layoutY="245.0" text="DB user:" textFill="#24f409">
+               <font>
+                  <Font name="Algerian" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="-6.0" layoutY="309.0" text="DB password:" textFill="#24f409">
+               <font>
+                  <Font name="Algerian" size="33.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ip_txtf" layoutX="237.0" layoutY="56.0" onAction="#ipTextFiled" prefHeight="26.0" prefWidth="179.0" style="-fx-background-radius: 30; -fx-border-color: #f20505; -fx-border-radius: 30;" />
+            <TextField fx:id="port_txtf" layoutX="237.0" layoutY="121.0" onAction="#portTextFiled" prefHeight="27.0" prefWidth="179.0" style="-fx-background-radius: 30; -fx-border-color: #f20505; -fx-border-radius: 30;" />
+            <TextField fx:id="dbname_txtf" layoutX="237.0" layoutY="182.0" onAction="#dbNameTextFiled" prefHeight="26.0" prefWidth="179.0" style="-fx-border-color: #f20505; -fx-background-radius: 30; -fx-border-radius: 30;" />
+            <TextField fx:id="dbuser_txtf" layoutX="237.0" layoutY="250.0" onAction="#dbUserTextFiled" prefHeight="26.0" prefWidth="179.0" style="-fx-background-radius: 30; -fx-border-color: #f20505; -fx-border-radius: 30;" />
+            <Button fx:id="disconnectBtn" layoutX="56.0" layoutY="405.0" mnemonicParsing="false" onAction="#disconnect" prefHeight="34.0" prefWidth="127.0" stylesheets="@ButtonStyle.css" text="Disconnect" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="connectBtn" layoutX="228.0" layoutY="405.0" mnemonicParsing="false" onAction="#connect" prefHeight="34.0" prefWidth="127.0" stylesheets="@ButtonStyle.css" text="Connect" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="65.0" layoutY="6.0" text="Server Configuration" textFill="#24f409">
+               <font>
+                  <Font name="Algerian" size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="importdataBtn" layoutX="85.0" layoutY="463.0" mnemonicParsing="false" onAction="#importExternalDB" prefHeight="34.0" prefWidth="244.0" stylesheets="@ButtonStyle.css" text="Import Data" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font></Button>
+            <Button fx:id="exitBtn" layoutX="178.0" layoutY="534.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="59.0" stylesheets="@ExitButton.css" text="Exit">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font></Button>
+            <ImageView fitHeight="103.0" fitWidth="101.0" layoutX="299.0" layoutY="447.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/click.jpg" />
+               </image>
+            </ImageView>
+            <PasswordField fx:id="dbpassword_txtf" layoutX="237.0" layoutY="315.0" onAction="#dbPasswordTextFiled" prefHeight="26.0" prefWidth="179.0" style="-fx-border-radius: 30; -fx-background-radius: 30; -fx-border-color: #f20505;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="522.0" layoutY="106.0" prefHeight="286.0" prefWidth="312.0" style="-fx-background-color: white;">
+         <children>
+            <TableView fx:id="viewtable" layoutY="-1.0" prefHeight="290.0" prefWidth="312.0" style="-fx-background-color: #6971DB;">
+              <columns>
+                <TableColumn fx:id="ipList" prefWidth="92.00006103515625" text="IP" />
+                <TableColumn fx:id="hostList" prefWidth="101.5999755859375" text="Host" />
+                  <TableColumn fx:id="statusList" prefWidth="116.79998779296875" text="Status" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="521.0" layoutY="406.0" prefHeight="256.0" prefWidth="312.0" style="-fx-background-color: #6971DB;">
+         <children>
+            <Label layoutX="106.0" layoutY="37.0" text="Console">
+               <font>
+                  <Font name="Algerian" size="22.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="console_txtarea" layoutX="44.0" layoutY="76.0" prefHeight="158.0" prefWidth="223.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
